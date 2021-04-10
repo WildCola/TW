@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: monospace;
+    background-color: rgb(66, 64, 64);;
+}
+
+.top{
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    width: 100%;
+}
+
+.musiclogo{
+    position: fixed;
+    margin-left: 10%;
+    height: 75px;
+    width: 100px;
+    padding: 5px;
+    animation: convertible 5s linear infinite alternate, back 10s linear infinite;
+}
+
+@keyframes convertible{
+    from {margin-left: 10%}
+    to {margin-left: 40vw}
+}
+
+@keyframes back{
+    0%, 49%{
+        transform: scaleX(1);
+    }
+    50%, 99%{
+        transform: scaleX(-1);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+} 
+
+.navi{
+    position: fixed;
+    right: 15%;
+    cursor: pointer;
+}
+
+.pfp{
+    position: relative;
+    max-height: 100%;
+    min-height: 40px;
+    min-width: 40px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.profil{
+    position: absolute;
+    top:25%;
+    font-family: calibri;
+    color:white;
+    font-size: 25px;
+}
+
+.dropdown a{
+    color:black;
+    padding: 5px;
+    font-family: calibri;
+    font-size: 25px;
+    display: block;
+    text-decoration: none;
+    z-index: 1;
+}
+
+.dropdown{
+    display: none;
+    border-radius: 5%;
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+    z-index: 1;
+}
+
+.navi:hover .dropdown{
+    display: block;
+}
+
+.navi:hover .profil{
+    color: rgb(113, 124, 223);
+}
+
+.dropdown a:hover{
+    background-color: rgb(113, 124, 223);
+    border-radius: 5%;
+}
+
+.sidebar{
+    height: 100%;
+    width: 200px; 
+    position: fixed; 
+    z-index: 0; 
+    top: 80px; 
+    left: 0;
+    background-color: rgb(113, 124, 223);
+    font-size: 25px;
+    font-family: calibri;
+    padding-top: 20px;
+}
+
+.sidebar a{
+    width: 100%;
+    padding: 6px 8px 12px 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.sidebar a img{
+    display: none;
+    width:65px
+}
+
+.white{
+    display: none;
+}   
+
+.home:hover .white{
+    display: block;
+}
+
+.home:hover .black{
+    display: none;
+} 
+
+.search:hover .white{
+    display: block;
+}
+
+.search:hover .black{
+    display: none;
+} 
+
+.library:hover .white{
+    display: block;
+}
+
+.library:hover .black{
+    display: none;
+} 
+
+.sidebar a:hover{color: white;}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+::-webkit-scrollbar-track {
+    background: black; 
+  }
+   
+::-webkit-scrollbar-thumb {
+    background: rgb(113, 124, 223); 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(84, 94, 177); 
+}
+
+::-webkit-scrollbar-corner{
+      background: black;
+}
+
+.grid-container{
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top:80px;
+    left: 200px;
+    right: 0px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color:  rgb(66, 64, 64);
+    padding: 10px;
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+    z-index: -1;
+}
+
+.grid-item{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 5%;
+    margin:auto;
+    background-color: black;
+    color:white;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    height: 15vw;
+    width: 15vw;
+    max-width: 400px;
+    max-height: 400px;
+    min-width: 190px;
+    min-height: 190px;
+}
+
+.grid-item img{
+    border-radius: 5%;  
+    max-width: 400px;
+    max-height: 400px;
+    min-width: 190px;
+    min-height: 190px;
+}
+
+.details{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 15vw;
+    width: 15vw;
+    font-size: 0.5vw;
+    max-width: 400px;
+    max-height: 400px;
+    min-width: 190px;
+    min-height: 190px;
+    display: none;
+    position: absolute;
+    top: 150px;
+    background: rgba(0,0,0,0.5);
+}
+
+h1::before{
+    content: "Artist: ";
+}
+
+h2::before{
+    content: "Album: "
+}
+
+.details h1{
+    position: absolute;
+    top: 70%;
+    left: 1%;
+}
+
+.details h2{
+    position: absolute;
+    top: 80%;
+    left: 1%;
+}
+
+.grid-item:hover .details{
+    display: block;
+}
+
+#item1{
+    min-height: 0;
+    margin-left: 0%;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color:  rgb(66, 64, 64);
+    text-align: left;
+    height: 20px;
+}
+
+#item6{
+    min-height: 0;
+    margin-left: 0%;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color:  rgb(66, 64, 64);
+    text-align: left;
+    height: 20px;
+}
+
+#item11{
+    min-height: 0;
+    margin-left: 0%;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color:  rgb(66, 64, 64);
+    text-align: left;
+    height: 20px;
+}
+
+.albumcover{
+    position: relative;
+    height: 15vw;
+    width: 15vw;
+}
+
+@media (max-aspect-ratio:5/4){
+    .sidebar{
+        width: 100px; 
+    }
+    .sidebar a h3{
+        display: none;
+    }
+    .sidebar a img{
+        display: block;
+    }
+
+    .grid-container{
+        left:100px;
+        min-width: 900px;
+        overflow-x: auto;
+    }
+
+    .details{
+        font-size: 8px;
+    }
+}
