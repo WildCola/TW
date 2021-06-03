@@ -2,26 +2,27 @@
 
 <html lang="en">
     <head>
+        <script type="text/javascript" src="daMusic.js"></script>
         <meta charset="utf-8"/>
         <title>DaMusic</title>
         <link rel="shortcut icon" type="image/x-icon" href="dalogo.png" />
         <link rel="stylesheet" href="daMusic.css">
     </head>
-    <body>
+    <body onload = "choosePic();clock();">
         <div class="top">
-            <a href="daMusic.html"><img class="musiclogo" alt="logo.png" src="dalogo2.png"></a>
+            <a href="https://www.youtube.com/watch?v=0ElVqAgy4w8"><img class="musiclogo" alt="logo.png" src="dalogo2.png"></a>
             <div class="navi">
-                <img class="pfp" src="pfp.jpg" alt="pfp.jpg">
+                <img id="pfp" src="profilepics/pfp.jpg" alt="pfp.jpg">
                 <span class="profil">Profile</span>
                 <div class="dropdown">
-                    <a href="#">Account</a>
+                    <a href="#" onclick="profil()">Account</a>
                     <a href="#">Log out</a>
                 </div>
             </div>
         </div>
 
         <div class="sidebar">
-            <a class="home" href="#">
+            <a class="home" href="daMusic.html">
                 <div class="black">
                     <img src="home.png" alt="home">
                     
@@ -33,7 +34,7 @@
                 
                 <h3>Home</h3>
             </a>
-            <a class="search" href="#">
+            <a class="search" href=# onclick="cautare()">
                 <div class="black">
                     <img src="search.png" alt="search">
                 </div>
@@ -53,9 +54,16 @@
                 </div>
                 <h3>Your Library</h3>
             </a>
+            <a id="clock" href="#" onclick="embolden()"></a>
+            <a id="col" href="#" onclick="getColor()">
+                <h3>Get Color</h3>
+            </a>
         </div>
 
-        <div class="grid-container">
+        <div id="grid-container">
+            <div class="grid-item" id="searchbar">
+                <input type="text" id="bar" placeholder="Search...">
+            </div>
             <div class="grid-item" id="item1">Recommended</div>
             <div class="grid-item" id="item2">
                 <img class ="albumcover" src="kirk.jpg" alt="albumcover missing">

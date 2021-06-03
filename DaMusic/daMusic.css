@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+
+.bold{
+    font-weight: bold;
+}
+
 body{
     font-family: monospace;
     background-color: rgb(66, 64, 64);;
@@ -47,11 +52,9 @@ body{
     cursor: pointer;
 }
 
-.pfp{
+#pfp{
     position: relative;
-    max-height: 100%;
-    min-height: 40px;
-    min-width: 40px;
+    width: 70px;
     height: 70px;
     border-radius: 50%;
     padding: 5px;
@@ -110,6 +113,11 @@ body{
     padding-top: 20px;
 }
 
+#col{
+    font-weight: bold;
+    font-size: 26px;
+}
+
 .sidebar a{
     width: 100%;
     padding: 6px 8px 12px 20px;
@@ -121,6 +129,10 @@ body{
 .sidebar a img{
     display: none;
     width:65px
+}
+
+#clock{
+    font-size: 30px;
 }
 
 .white{
@@ -173,7 +185,7 @@ body{
       background: black;
 }
 
-.grid-container{
+#grid-container{
     overflow-y: auto;
     overflow-x: hidden;
     position: absolute;
@@ -263,6 +275,24 @@ h2::before{
     display: block;
 }
 
+#searchbar{
+    display: none;
+    margin-left: 0%;
+    min-height: 0;
+    margin-top: 30px;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color:  rgb(66, 64, 64);
+    text-align: left;
+    height: 20px;
+}
+
+#bar{
+    width: 40vw;
+    height: 30px;
+}
+
 #item1{
     min-height: 0;
     margin-left: 0%;
@@ -317,6 +347,14 @@ h2::before{
     }
     .sidebar a img{
         display: block;
+    }
+
+    #col{
+        display:none;
+    }
+
+    #clock{
+        font-size: 20px;
     }
 
     .grid-container{
