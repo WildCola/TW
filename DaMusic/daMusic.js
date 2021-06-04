@@ -41,6 +41,13 @@ function choosePic() {
     document.getElementById("pfp").src = myPix[randomNum];
 }
 
+var colors = new Array("rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(238, 130, 238)", "rgb(128, 0, 128)", "rgb(113, 124, 223)", "rgb(255, 192, 203)");
+function changeColor(){
+    var randomNum = Math.floor(Math.random() * colors.length);
+    var s = document.getElementsByClassName("sidebar");
+        s[0].style.backgroundColor = colors[randomNum];
+}
+
 setInterval(function(){ alert("Are you still there?"); }, 300000);
 
 if(localStorage.getItem("accepted") == 0 || localStorage.getItem("accepted") === null){
@@ -253,8 +260,4 @@ function getColor(){
     var elem = document.getElementsByClassName('sidebar');
     var theCSSprop = window.getComputedStyle(elem[0], null).getPropertyValue("background-color");
     alert(theCSSprop);
-}
-
-function changeColor(){
-    
 }
